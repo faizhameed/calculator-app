@@ -1,12 +1,16 @@
 import React from "react";
 import "./button.scss";
 import { connect } from "react-redux";
-import { addToInput } from "../../redux/input/input.actions";
+import { addToInput, clearOutput } from "../../redux/input/input.actions";
 
-const Button = ({ children, end, addToInput, operator }) => {
+const Button = ({ children, end, addToInput, operator, clearOutput }) => {
   const handleClick = () => {
     if (operator) {
-      addToInput(operator);
+      if (operator !== "C") {
+        addToInput(operator);
+      } else {
+        clearOutput();
+      }
     } else {
       addToInput(children);
     }
@@ -25,7 +29,8 @@ const Button = ({ children, end, addToInput, operator }) => {
 const mapStateToProps = state => ({});
 
 const mapDispatchToProps = dispatch => ({
-  addToInput: item => dispatch(addToInput(item))
+  addToInput: item => dispatch(addToInput(item)),
+  clearOutput: () => dispatch(clearOutput())
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Button);
