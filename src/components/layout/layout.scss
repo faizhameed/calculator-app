@@ -2,8 +2,16 @@
   display: grid;
   width: 50%;
   min-width: 300px;
+  max-width: 500px;
   margin: 0 auto;
   grid-template-columns: 1fr;
+  background-color: #f2f2f2;
+  border-radius: 25px;
+  padding: 10px;
+  .ip-container {
+    width: 100%;
+    height: 100px;
+  }
   .row {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -11,12 +19,9 @@
     align-items: center;
     justify-items: center;
     .calc-op-icons {
-      width: 50px;
+      width: 40px;
     }
-    .calc-ip-op {
-      grid-area: 1/1/2/5;
-      width: 100%;
-    }
+
     .equal-btn {
       grid-area: 1/3/2/5;
     }

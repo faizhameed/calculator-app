@@ -12,20 +12,20 @@ import MultiplySvgComponent from "../../assets/multiply.svg";
 
 const Layout = props => {
   return (
-    <div>
+    <div className="cal-full">
       <div className="calc-wrapper">
-        <div className="row">
+        <div className="ip-container">
           <Input />
         </div>
         <div className="row">
-          <Button>C</Button>
-          <Button>
+          <Button operator="C">C</Button>
+          <Button operator="±">
             <PosNegSvgComponent />
           </Button>
-          <Button>
+          <Button operator="%">
             <PercentageSvgComponent />
           </Button>
-          <Button>
+          <Button operator="/" end={true}>
             <DivideSvgComponent />
           </Button>
         </div>
@@ -33,7 +33,7 @@ const Layout = props => {
           <Button>7</Button>
           <Button>8</Button>
           <Button>9</Button>
-          <Button>
+          <Button operator="*" end={true}>
             <MultiplySvgComponent />
           </Button>
         </div>
@@ -41,7 +41,7 @@ const Layout = props => {
           <Button>4</Button>
           <Button>5</Button>
           <Button>6</Button>
-          <Button>
+          <Button operator="-" end={true}>
             <SubtractSvgComponent />
           </Button>
         </div>
@@ -49,7 +49,7 @@ const Layout = props => {
           <Button>1</Button>
           <Button>2</Button>
           <Button>3</Button>
-          <Button>
+          <Button operator="+" end={true}>
             <AddSvgComponent />
           </Button>
         </div>

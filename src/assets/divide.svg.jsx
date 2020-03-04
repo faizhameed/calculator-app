@@ -1,12 +1,17 @@
 import * as React from "react";
 
-function DivideSvgComponent() {
+function DivideSvgComponent({ fill }) {
   return (
-    <svg className="calc-op-icons" data-name="Layer 1" viewBox="0 0 100 100">
+    <svg
+      className="calc-op-icons"
+      fill={fill}
+      data-name="Layer 1"
+      viewBox="0 0 100 100"
+    >
       <title>{"Calculator Symbols"}</title>
       <path
         fill="none"
-        stroke="#000"
+        /* stroke="#f6f6f6" */
         strokeLinecap="round"
         strokeMiterlimit={10}
         strokeWidth={6.24}

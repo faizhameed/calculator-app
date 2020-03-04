@@ -1,0 +1,27 @@
+.cal-display {
+  height: 100%;
+  font-size: 1em;
+  background: transparent;
+  border: none;
+  outline: none;
+  text-align: right;
+  display: grid;
+  align-items: center;
+  padding-right: 40px;
+  p {
+    width: 100%;
+    margin: 0;
+    font-size: 2em;
+    color: #61c6f2;
+  }
+  .solution {
+    font-size: 3em;
+  }
+  .valuation {
+    svg {
+      height: 30px;
+      fill: #61c6f2;
+      stroke: #61c6f2;
+    }
+  }
+}

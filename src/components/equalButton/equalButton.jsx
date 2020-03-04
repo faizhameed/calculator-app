@@ -1,11 +1,12 @@
 import React from "react";
 import EqualSvgComponent from "../../assets/equal.svg";
+import "./equalButton.scss";
 
 const EqualButton = () => {
   return (
-    <button className="equal-btn">
+    <div className="equal-btn">
       <EqualSvgComponent />
-    </button>
+    </div>
   );
 };
 

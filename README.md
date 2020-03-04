@@ -15,3 +15,10 @@ Note:
 - webApp need to build and run with a single npm start command.
 
 - Git: kindly push the code to a git repository and send us a url from any online git open service.
+
+Colors:
+
+- Calulator body : #F2F2F2
+- Button Background: #F6F6F6
+- Font color: #61C6F2
+- Linear gradient: from #61C6F2 to #7995D5

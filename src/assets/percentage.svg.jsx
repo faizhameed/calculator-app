@@ -1,12 +1,17 @@
 import * as React from "react";
 
-function PercentageSvgComponent() {
+function PercentageSvgComponent({ fill }) {
   return (
-    <svg className="calc-op-icons" data-name="Layer 1" viewBox="0 0 100 100">
+    <svg
+      fill={fill}
+      className="calc-op-icons"
+      data-name="Layer 1"
+      viewBox="0 0 100 100"
+    >
       <defs>
         <style>
           {
-            ".prefix__cls-2{fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.96px}"
+            ".prefix__cls-2{fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:4.96px}"
           }
         </style>
       </defs>
@@ -14,7 +19,7 @@ function PercentageSvgComponent() {
       <path
         strokeWidth={4.78}
         fill="none"
-        stroke="#000"
+        /* stroke="#61c6f2" */
         strokeLinecap="round"
         strokeMiterlimit={10}
         d="M68.66 25.13L31.34 76.87"

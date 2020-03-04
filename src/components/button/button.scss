@@ -1,0 +1,27 @@
+.btn {
+  cursor: pointer;
+  color: #61c6f2;
+  display: block;
+  height: 50px;
+  width: 50px;
+  line-height: 50px;
+  -moz-border-radius: 50%; /* or 50% */
+  border-radius: 50%; /* or 50% */
+  background-color: #f6f6f6;
+  box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  margin: 10px;
+  svg {
+    fill: #61c6f2;
+    stroke: #61c6f2;
+    padding-top: 4px;
+  }
+}
+
+.btn-2 {
+  background-color: #61c6f2;
+  svg {
+    fill: #f6f6f6;
+    stroke: #f6f6f6;
+  }
+}

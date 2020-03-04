@@ -1,12 +1,17 @@
 import * as React from "react";
 
-function EqualSvgComponent() {
+function EqualSvgComponent({ fill }) {
   return (
-    <svg className="calc-op-icons" data-name="Layer 1" viewBox="0 0 100 100">
+    <svg
+      className="calc-op-icons"
+      fill={fill}
+      data-name="Layer 1"
+      viewBox="0 0 100 100"
+    >
       <defs>
         <style>
           {
-            ".prefix__cls-1{fill:none;stroke:#000;stroke-linecap:round;stroke-miterlimit:10;stroke-width:6.24px}"
+            ".prefix__cls-1{fill:none;stroke-linecap:round;stroke-miterlimit:10;stroke-width:6.24px}"
           }
         </style>
       </defs>
