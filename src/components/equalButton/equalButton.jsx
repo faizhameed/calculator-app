@@ -5,36 +5,56 @@ import { connect } from "react-redux";
 import { calculatedSolution } from "../../redux/input/input.actions";
 
 const EqualButton = ({ inputItems, calculatedSolution }) => {
+  function math_it_up(op, x, y) {
+    x = parseFloat(x);
+    y = parseFloat(y);
+    switch (op) {
+      case "+":
+        return x + y;
+      case "-":
+        return x - y;
+      case "*":
+        return x * y;
+      case "/":
+        return x / y;
+      default:
+        return null;
+    }
+  }
+
   function calculate(arr) {
     var operators = ["*", "/", "+", "-"];
     let tempArr = [...arr];
-    for (let i = 0; i < tempArr.length; i++) {
-      let tempCalc = 0;
-      if (tempArr[i] === "*") {
-        let leftItem = tempArr[i - 1],
-          rightItem = tempArr[i + 1];
-        tempCalc = leftItem * rightItem;
-        let index = tempArr.indexOf(leftItem);
-        if (index > -1) {
-          tempArr.splice(index, 1);
-        }
-        index = tempArr.indexOf(rightItem);
-        if (index > -1) {
-          tempArr.splice(index, 1);
-        }
-        index = tempArr.indexOf("*");
-        if (index > -1) {
-          tempArr[index] = tempCalc;
+    let k = 0;
+    while (k < operators.length) {
+      for (let i = 0; i < tempArr.length; i++) {
+        let tempCalc = 0;
+        if (tempArr[i] === operators[k]) {
+          let leftItem = tempArr[i - 1],
+            rightItem = tempArr[i + 1];
+          tempCalc = math_it_up(operators[k], leftItem, rightItem);
+          let index = tempArr.indexOf(leftItem);
+          if (index > -1) {
+            tempArr.splice(index, 1);
+          }
+          index = tempArr.indexOf(rightItem);
+          if (index > -1) {
+            tempArr.splice(index, 1);
+          }
+          index = tempArr.indexOf(operators[k]);
+          if (index > -1) {
+            tempArr[index] = tempCalc;
+            i--;
+          }
         }
       }
+      k++;
     }
-    console.log("multiplied array", tempArr);
+    return tempArr[0];
   }
 
   const handleCalculation = () => {
-    let solution = calculate(inputItems);
-    console.log("inpit", inputItems);
-    console.log("sol:", solution);
+    calculatedSolution(calculate(inputItems));
   };
 
   return (
