@@ -15,6 +15,22 @@ const inputReducer = (state = INITIAL_STATE, action) => {
           inputItems: [...state.inputItems, payload]
         };
       else {
+        if (payload === "." && !state.inputItems) {
+          //CHECK if there is no other item
+          return {
+            ...state,
+            inputItems: ["0."]
+          };
+        }
+        if (payload === "." && isNaN(state.inputItems.slice(-1)[0])) {
+          //CHECK if there is no other item
+          // state.inputItems.push("0.");
+          return {
+            ...state,
+            inputItems: [...state.inputItems, "0."]
+          };
+        }
+
         if (
           state.inputItems.length >= 1 &&
           !isNaN(state.inputItems.slice(-1)[0])
