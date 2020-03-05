@@ -22,3 +22,17 @@ Colors:
 - Button Background: #F6F6F6
 - Font color: #61C6F2
 - Linear gradient: from #61C6F2 to #7995D5
+
+Updates:
+
+- Basic operands is working successfully.
+- UI built as per the design given.
+- Redux state management done.
+- algorithm built with out eval operator.
+- Responsive in all devices upto 310px width.
+
+Works to do:
+
+- add to floating points to same number display error
+- % operator function
+- +/- operator function
