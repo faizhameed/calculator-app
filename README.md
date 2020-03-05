@@ -25,11 +25,11 @@ Colors:
 
 Updates:
 
-- Basic operands is working successfully.
+- Basic operands are working successfully.
 - UI built as per the design given.
-- Redux state management done.
-- algorithm built with out eval operator.
-- Responsive in all devices upto 310px width.
+- Redux state management is done.
+- the algorithm built without eval operator.
+- Responsive in all devices up to 310px width.
 - % operator function done
 
 Works to do:
