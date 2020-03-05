@@ -23,8 +23,18 @@ const EqualButton = ({ inputItems, calculatedSolution }) => {
   }
 
   function calculate(arr) {
-    var operators = ["*", "/", "+", "-"];
     let tempArr = [...arr];
+    let per = tempArr.indexOf("%");
+    while (per > -1) {
+      // funtion for % operator
+      if (tempArr[per - 1]) {
+        tempArr[per - 1] /= 100;
+        tempArr.splice(per, 1);
+      } else return NaN;
+      per = tempArr.indexOf("%");
+    }
+
+    var operators = ["*", "/", "+", "-"];
     let k = 0;
     while (k < operators.length) {
       for (let i = 0; i < tempArr.length; i++) {
@@ -50,7 +60,10 @@ const EqualButton = ({ inputItems, calculatedSolution }) => {
       }
       k++;
     }
-    return tempArr[0];
+
+    //fixing decimal float
+    return Number(parseFloat(tempArr[0]).toFixed(8));
+    //return tempArr[0];
   }
 
   const handleCalculation = () => {

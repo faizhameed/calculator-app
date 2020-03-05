@@ -30,9 +30,9 @@ Updates:
 - Redux state management done.
 - algorithm built with out eval operator.
 - Responsive in all devices upto 310px width.
+- % operator function done
 
 Works to do:
 
 - add to floating points to same number display error
-- % operator function
 - +/- operator function
