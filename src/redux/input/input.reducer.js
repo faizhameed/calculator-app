@@ -35,11 +35,12 @@ const inputReducer = (state = INITIAL_STATE, action) => {
           state.inputItems.length >= 1 &&
           !isNaN(state.inputItems.slice(-1)[0])
         ) {
-          let temp = state.inputItems.pop();
+          let tempArr = [...state.inputItems];
+          let temp = tempArr.pop();
           temp += payload;
           return {
             ...state,
-            inputItems: [...state.inputItems, temp]
+            inputItems: [...tempArr, temp]
           };
         }
         return {
