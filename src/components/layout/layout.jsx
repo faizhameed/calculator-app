@@ -19,7 +19,7 @@ const Layout = props => {
         </div>
         <div className="row">
           <Button operator="C">C</Button>
-          <Button operator="±">
+          <Button operator="pl-mi">
             <PosNegSvgComponent />
           </Button>
           <Button operator="%">

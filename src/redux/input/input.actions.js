@@ -13,3 +13,7 @@ export const calculatedSolution = value => ({
 export const clearOutput = () => ({
   type: inputTypes.CLEAR_OUTPUT
 });
+
+export const plusMinusClick = () => ({
+  type: inputTypes.PLUS_MINUS_CLICKED
+});

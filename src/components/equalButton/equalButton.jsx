@@ -62,7 +62,8 @@ const EqualButton = ({ inputItems, calculatedSolution }) => {
     }
 
     //fixing decimal float
-    return Number(parseFloat(tempArr[0]).toFixed(8));
+    if (inputItems) return Number(parseFloat(tempArr[0]).toFixed(8));
+    else return 0;
     //return tempArr[0];
   }
 
@@ -77,7 +78,7 @@ const EqualButton = ({ inputItems, calculatedSolution }) => {
   );
 };
 
-const mapStateToProps = ({ inputReducer: { inputItems } }) => ({
+const mapStateToProps = ({ inputReducer: { inputItems, solution } }) => ({
   inputItems
 });
 

@@ -9,12 +9,32 @@ const inputReducer = (state = INITIAL_STATE, action) => {
   const { type, payload } = action;
   switch (type) {
     case inputTypes.ADD_TO_INPUT:
-      if (isNaN(payload) && payload !== ".")
+      if (isNaN(payload) && payload !== ".") {
+        switch (
+          payload // user enters + or - as the first input
+        ) {
+          case "-":
+            if (!state.inputItems)
+              return {
+                ...state,
+                inputItems: ["0", "-"]
+              };
+            break;
+          case "+":
+            if (!state.inputItems)
+              return {
+                ...state,
+                inputItems: ["0", "+"]
+              };
+            break;
+          default:
+            break;
+        }
         return {
           ...state,
           inputItems: [...state.inputItems, payload]
         };
-      else {
+      } else {
         if (payload === "." && !state.inputItems) {
           //CHECK if there is no other item
           return {
@@ -51,6 +71,7 @@ const inputReducer = (state = INITIAL_STATE, action) => {
     case inputTypes.SOLUTION_OUTPUT:
       return {
         ...state,
+        inputItems: "",
         solution: payload
       };
     case inputTypes.CLEAR_OUTPUT:
@@ -58,6 +79,12 @@ const inputReducer = (state = INITIAL_STATE, action) => {
         ...state,
         inputItems: "",
         solution: 0
+      };
+    case inputTypes.PLUS_MINUS_CLICKED:
+      const temp = -1 * state.solution;
+      return {
+        ...state,
+        inputItems: [...[temp]]
       };
     default:
       return state;
