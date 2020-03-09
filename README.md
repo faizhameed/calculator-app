@@ -31,8 +31,8 @@ Updates:
 - the algorithm built without eval operator.
 - Responsive in all devices up to 310px width.
 - % operator function done
+- +/- operator function done
 
 Works to do:
 
 - add to floating points to same number display error
-- +/- operator function
